@@ -8,7 +8,14 @@ This app was made with Flutter and strapi API, I made a windows app for admin, a
 ![Screenshot 2021-09-22 135229](https://user-images.githubusercontent.com/67217506/134819240-53814fbe-1dc9-4de4-9e89-b3ddf00e01db.jpg)
 
 
+
+
+
 ![Screenshot 2021-09-22 135240](https://user-images.githubusercontent.com/67217506/134819245-b1c2e874-f5ec-4256-b65b-81c9b446d984.jpg)
+
+
+
+
 
 
 ![Screenshot 2021-09-22 135251](https://user-images.githubusercontent.com/67217506/134819247-00cd73cb-d002-4140-ba01-6af8845b1ae0.jpg)
