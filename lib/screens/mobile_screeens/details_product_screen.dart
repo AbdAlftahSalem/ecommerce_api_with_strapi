@@ -1,5 +1,4 @@
 import 'package:ecommerce_api/const.dart';
-import 'package:ecommerce_api/controllers/cart_controller.dart';
 import 'package:ecommerce_api/controllers/home_admin_controller.dart';
 import 'package:ecommerce_api/controllers/home_user_controller.dart';
 import 'package:ecommerce_api/models/order_model.dart';
@@ -135,32 +134,6 @@ class DetailsProductScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        // Row(
-                        //   children: [
-                        //     Container(
-                        //       decoration: BoxDecoration(
-                        //         color: Colors.white,
-                        //         borderRadius: BorderRadius.circular(2.0.w),
-                        //       ),
-                        //       child: Row(
-                        //         children: [
-                        //           IconButton(
-                        //             onPressed: ()=>controller.minQuntity(),
-                        //             icon: Icon(Icons.minimize),
-                        //           ),
-                        //           CustomText(
-                        //             txt: controller.quntity.toString(),
-                        //           ),
-                        //           IconButton(
-                        //             onPressed: ()=>controller.addQuntity(),
-                        //             icon: Icon(Icons.add, color: Colors.black),
-                        //           ),
-                        //         ],
-                        //       ),
-                        //     ),
-                        //     spaceBetween(width: 3.0.w),
-                        //   ],
-                        // ),
                       ],
                     ),
                   ),
@@ -174,47 +147,3 @@ class DetailsProductScreen extends StatelessWidget {
   }
 }
 
-// InkWell(
-// onTap: (){
-// setState(() {
-// sum++;
-// print('$sum');
-// });
-//
-// },
-// child: Container(
-// width: 6.0.w,height: 3.0.h,
-// decoration: BoxDecoration(
-// borderRadius: BorderRadius.circular(4),
-// color: Color(0xff2F6964),
-// ),
-// child: new Center(
-// child: Icon(CupertinoIcons.add, color: Colors.white,size: 10,),
-// ),
-// ),
-// ),
-// SizedBox(height: 10,),
-// Text('$sum' , style: TextStyle(
-// color: Colors.black,
-// fontSize: 15.0.sp,
-// ),),
-// SizedBox(height: 10,),
-// InkWell(
-// onTap: (){
-// setState(() {
-// sum--;
-// print('$sum');
-// });
-//
-// },
-// child: Container(
-// width: 6.0.w,height: 3.0.h,
-// decoration: BoxDecoration(
-// borderRadius: BorderRadius.circular(4),
-// color: Color(0xff2F6964),
-// ),
-// child: new Center(
-// child: Icon(Icons.remove, color: Colors.white,size: 8,),
-// ),
-// ),
-// ),

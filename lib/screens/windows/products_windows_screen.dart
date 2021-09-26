@@ -45,54 +45,6 @@ class ProductsWindowsScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                // Padding(
-                //   padding: EdgeInsets.only(left: 1.0.w, right: 1.0.w, bottom: 1.0.h),
-                //   child: Container(
-                //     decoration: BoxDecoration(
-                //       color: Color(0xFFE3E0F3),
-                //       borderRadius: BorderRadius.circular(1.0.w),
-                //     ),
-                //     child: Padding(
-                //       padding:
-                //           EdgeInsets.symmetric(horizontal: 2.0.w, vertical: 1.0.h),
-                //       child: Row(
-                //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //         children: [
-                //           CustomText(
-                //             txt: 'Id ',
-                //             color: Colors.black,
-                //             fontWeight: FontWeight.w600,
-                //           ),
-                //           CustomText(
-                //             txt: 'image',
-                //             color: Colors.black,
-                //             fontWeight: FontWeight.w600,
-                //           ),
-                //           CustomText(
-                //             txt: 'title',
-                //             color: Colors.black,
-                //             fontWeight: FontWeight.w600,
-                //           ),
-                //           CustomText(
-                //             txt: 'category',
-                //             color: Colors.black,
-                //             fontWeight: FontWeight.w600,
-                //           ),
-                //           CustomText(
-                //             txt: 'color',
-                //             color: Colors.black,
-                //             fontWeight: FontWeight.w600,
-                //           ),
-                //           CustomText(
-                //             txt: 'price',
-                //             color: Colors.black,
-                //             fontWeight: FontWeight.w600,
-                //           ),
-                //         ],
-                //       ),
-                //     ),
-                //   ),
-                // ),
                 Expanded(
                   flex: 9,
                   child: Container(

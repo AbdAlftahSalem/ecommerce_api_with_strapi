@@ -2,13 +2,9 @@ import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce_api/const.dart';
 import 'package:ecommerce_api/controllers/home_admin_controller.dart';
-import 'package:ecommerce_api/screens/mobile_screeens/details_product_screen.dart';
-import 'package:ecommerce_api/screens/widget/custem_text.dart';
-import 'package:ecommerce_api/screens/widget/custom_outline_button.dart';
 import 'package:ecommerce_api/screens/widget/grid_product_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 

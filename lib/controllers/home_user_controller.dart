@@ -6,7 +6,6 @@ import 'package:ecommerce_api/models/order_model.dart';
 import 'package:ecommerce_api/models/product_model.dart';
 import 'package:ecommerce_api/screens/mobile_screeens/cart_screen.dart';
 import 'package:ecommerce_api/screens/mobile_screeens/home_screen.dart';
-import 'package:ecommerce_api/screens/mobile_screeens/home_screen_user.dart';
 import 'package:ecommerce_api/screens/mobile_screeens/profile_screen.dart';
 import 'package:ecommerce_api/screens/mobile_screeens/search_screen.dart';
 import 'package:ecommerce_api/screens/mobile_screeens/shop_screen.dart';

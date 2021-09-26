@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:ecommerce_api/controllers/auth_controller.dart';
 import 'package:ecommerce_api/models/checkout_model.dart';
 import 'package:ecommerce_api/screens/mobile_screeens/submit_order_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 

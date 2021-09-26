@@ -3,7 +3,6 @@ import 'package:ecommerce_api/controllers/auth_controller.dart';
 import 'package:ecommerce_api/controllers/cart_controller.dart';
 import 'package:ecommerce_api/controllers/checkout_controller.dart';
 import 'package:ecommerce_api/models/checkout_model.dart';
-import 'package:ecommerce_api/screens/mobile_screeens/submit_order_screen.dart';
 import 'package:ecommerce_api/screens/widget/custem_text.dart';
 import 'package:ecommerce_api/screens/widget/custom_button.dart';
 import 'package:ecommerce_api/screens/widget/custom_text_form_field.dart';

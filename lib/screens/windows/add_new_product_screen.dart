@@ -292,29 +292,4 @@ class AddNewProductScreen extends StatelessWidget {
     );
   }
 }
-// showDialog(
-// context: context,
-// builder: (BuildContext context) {
-// return AlertDialog(
-// title: const Text('Pick a color!'),
-// content: SingleChildScrollView(
-// child: MaterialPicker(
-// pickerColor: currentColor,
-// onColorChanged: (val) {
-// print(val);
-// },
-// enableLabel: true,
-// ),
-// ),
-//
-// actions: <Widget>[
-// FlatButton(
-// child: const Text('Got it'),
-// onPressed: () {
-// Navigator.of(context).pop();
-// },
-// ),
-// ],
-// );
-// },
-// )
+

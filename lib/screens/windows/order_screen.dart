@@ -150,22 +150,4 @@ class OrderScreen extends StatelessWidget {
       ),
     );
   }
-// Expanded basicCard(String title, num) {
-//   return Expanded(
-//     child: Container(
-//       decoration: BoxDecoration(
-//         color: Color(0xFFE3E0F3),
-//         borderRadius: BorderRadius.circular(2.0.w),
-//       ),
-//       child: Padding(
-//         padding: EdgeInsets.symmetric(horizontal: 2.0.w, vertical: 0.5.h),
-//         child: CustomText(
-//           txt: '$title \n\n $num',
-//           color: Colors.black,
-//         ),
-//       ),
-//       margin: EdgeInsets.all(1.0.w),
-//     ),
-//   );
-// }
 }

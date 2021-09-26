@@ -8,7 +8,7 @@ const swatchColor = Color(0xFF444444);
 const darkColor = Color(0xFF303438);
 
 const baseURL = "http://";
-const iPv4Address = "10.0.0.2";
+const iPv4Address = "10.0.0.8";
 const port = "1337";
 
 const URL = "$baseURL$iPv4Address:$port";
