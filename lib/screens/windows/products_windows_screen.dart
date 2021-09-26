@@ -21,6 +21,7 @@ class ProductsWindowsScreen extends StatelessWidget {
             appBar: AppBar(),
             body: Column(
               children: [
+                spaceBetween(high: 1.0.h),
                 Expanded(
                   child: SizedBox(
                     width: 50.0.w,

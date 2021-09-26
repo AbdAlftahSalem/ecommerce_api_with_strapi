@@ -62,18 +62,15 @@ class AddNewProductScreen extends StatelessWidget {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(1.0.w),
                                   child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Image.network(
                                         "$URL${e.image!.url}",
                                         fit: BoxFit.cover,
                                         height: 2.6.h,
                                       ),
-                                      // spaceBetween(high: 1.0.h),
-                                      Padding(
-                                        padding: EdgeInsets.only(left: 1.2.w),
-                                        child: CustomText(
-                                          txt: e.title,
-                                        ),
+                                      CustomText(
+                                        txt: e.title,
                                       ),
                                     ],
                                   ),
@@ -205,25 +202,18 @@ class AddNewProductScreen extends StatelessWidget {
                     pickerColor: currentColor,
                     onColorChanged: (val) {
                       addProductController.chooseColor(val);
+                      Get.back();
                     },
                     enableLabel: true,
                   ),
                 ),
-                actions: <Widget>[
-                  FlatButton(
-                    child: const Text('Got it'),
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                ],
               );
             },
           ),
         ),
         spaceBetween(width: 10.0.w),
         CircleAvatar(
-          backgroundColor: addProductController.productColor,
+          backgroundColor: addProductController.showProductColor,
         ),
         Spacer(),
         CustomOutLineButton(

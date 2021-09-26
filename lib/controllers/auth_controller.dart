@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:ecommerce_api/models/user_model.dart';
 import 'package:ecommerce_api/screens/mobile_screeens/home_screen_user.dart';
+import 'package:ecommerce_api/screens/windows/dashboard_over_view_screen.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
@@ -68,8 +69,8 @@ class AuthController extends GetxController {
 
     if (response.statusCode == 200) {
       await getCurrentUser(newUser.email!);
-      Get.offAll(()=>HomeScreenUser());
-      // Get.offAll(()=>DashboardOverViewScreen());
+      // Get.offAll(()=>HomeScreenUser());
+      Get.offAll(()=>DashboardOverViewScreen());
     } else {
       print(response.reasonPhrase);
     }

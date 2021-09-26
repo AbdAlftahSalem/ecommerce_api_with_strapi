@@ -82,8 +82,9 @@ class DashboardOverViewScreen extends StatelessWidget {
                               homeAdminController.allCategories.length),
                         ),
                         InkWell(
-                          onTap: ()=>Get.to(()=>OrderScreen()),
-                          child: cardOverView('All order', homeAdminController.allChekOut.length),
+                          onTap: () => Get.to(() => OrderScreen()),
+                          child: cardOverView('All order',
+                              homeAdminController.allChekOut.length),
                         ),
                         cardOverView('Order last 24 hours', "30"),
                       ],
@@ -112,35 +113,6 @@ class DashboardOverViewScreen extends StatelessWidget {
           txt: "$title \n\n $num",
         ),
       ),
-    );
-  }
-
-  Row orderCard({String? imageUser, dateOrder, customerName, payment, price}) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        ClipRRect(
-            borderRadius: BorderRadius.circular(5.0.w),
-            child: Image.network(
-              imageUser!,
-              width: 5.0.w,
-              height: 5.0.h,
-            )),
-        CustomText(
-          txt: dateOrder,
-        ),
-        CustomText(
-          txt: customerName,
-        ),
-        CustomText(
-          txt: payment,
-          color: Colors.green,
-        ),
-        CustomText(
-          txt: price,
-        ),
-      ],
     );
   }
 

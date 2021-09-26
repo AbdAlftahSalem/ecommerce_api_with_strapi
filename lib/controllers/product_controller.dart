@@ -6,6 +6,7 @@ import 'package:ecommerce_api/controllers/home_admin_controller.dart';
 import 'package:ecommerce_api/models/category_model.dart';
 import 'package:ecommerce_api/models/product_model.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
@@ -17,6 +18,7 @@ class ProductController extends GetxController {
   String? productImageString;
   File? productImageFile;
   Color? productColor;
+  Color showProductColor = Colors.blue;
   ProductsModel newProduct = ProductsModel(
     color: "",
     price: "",
@@ -55,6 +57,7 @@ class ProductController extends GetxController {
 
   chooseColor(Color chooseColor) {
     newProduct.color = chooseColor.toString();
+    showProductColor = chooseColor;
     update();
   }
 
@@ -107,6 +110,8 @@ class ProductController extends GetxController {
       print(response.reasonPhrase);
       print(response.statusCode);
     }
+    homeAdminController.allProduct.add(newProduct);
+    update();
   }
 
   deleteProduct(int id, index) async {
