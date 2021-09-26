@@ -6,7 +6,11 @@ This app was made with Flutter and strapi API, I made a windows app for admin, a
 
 
 ![Screenshot 2021-09-22 135229](https://user-images.githubusercontent.com/67217506/134819240-53814fbe-1dc9-4de4-9e89-b3ddf00e01db.jpg)
+
+
 ![Screenshot 2021-09-22 135240](https://user-images.githubusercontent.com/67217506/134819245-b1c2e874-f5ec-4256-b65b-81c9b446d984.jpg)
+
+
 ![Screenshot 2021-09-22 135251](https://user-images.githubusercontent.com/67217506/134819247-00cd73cb-d002-4140-ba01-6af8845b1ae0.jpg)
 ![Screenshot 2021-09-22 135300](https://user-images.githubusercontent.com/67217506/134819248-3d3a5b94-de85-4038-9228-408fa815598c.jpg)
 ![Screenshot 2021-09-22 135309](https://user-images.githubusercontent.com/67217506/134819249-4cc5d3c6-e32e-4296-91b1-9c19bf27d137.jpg)
