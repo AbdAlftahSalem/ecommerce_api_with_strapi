@@ -47,13 +47,12 @@ class HomeUserController extends GetxController {
   }
 
   isDataExist(OrderModel order) {
-    if (authController.currentUser.orders!
-        .where((oldValue) => order.idProduct == (oldValue.idProduct.toString()))
-        .isEmpty) {
-      addToCart(order);
-    }else{
-      Get.snackbar('Message', 'This item existing');
-    }
+    authController.currentUser.orders!
+            .where((oldValue) =>
+                order.idProduct == (oldValue.idProduct.toString()))
+            .isEmpty
+        ? addToCart(order)
+        : Get.snackbar('Message', 'This item existing');
   }
 
   addToCart(OrderModel order) async {
