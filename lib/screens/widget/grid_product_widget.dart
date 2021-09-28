@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_api/controllers/home_admin_controller.dart';
 import 'package:ecommerce_api/controllers/home_user_controller.dart';
 import 'package:ecommerce_api/models/order_model.dart';

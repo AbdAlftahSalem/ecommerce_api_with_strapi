@@ -1,8 +1,4 @@
 import 'package:ecommerce_api/controllers/auth_controller.dart';
-import 'package:ecommerce_api/controllers/cart_controller.dart';
-import 'package:ecommerce_api/controllers/home_user_controller.dart';
-import 'package:ecommerce_api/screens/mobile_screeens/home_screen_user.dart';
-import 'package:ecommerce_api/screens/mobile_screeens/login_screen.dart';
 import 'package:ecommerce_api/screens/windows/login_windows_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

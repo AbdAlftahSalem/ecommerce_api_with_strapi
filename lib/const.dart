@@ -1,7 +1,7 @@
 import 'dart:ui';
-import 'package:sizer/sizer.dart';
 
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 const primaryColor = Color(0xFF6E8BC5);
 const swatchColor = Color(0xFF444444);

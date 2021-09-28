@@ -1,10 +1,8 @@
 import 'package:ecommerce_api/const.dart';
-import 'package:ecommerce_api/controllers/home_admin_controller.dart';
 import 'package:ecommerce_api/models/checkout_model.dart';
 import 'package:ecommerce_api/screens/widget/custem_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
 

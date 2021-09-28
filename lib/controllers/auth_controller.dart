@@ -59,10 +59,9 @@ class AuthController extends GetxController {
     loading = true;
     update();
     var headers = {'Content-Type': 'application/json'};
-    var request =
-        http.Request('POST', Uri.parse('$URL/auth/local'));
-    request.body = json.encode(
-        {"identifier": newUser.email, "password": password});
+    var request = http.Request('POST', Uri.parse('$URL/auth/local'));
+    request.body =
+        json.encode({"identifier": newUser.email, "password": password});
     request.headers.addAll(headers);
 
     http.StreamedResponse response = await request.send();
@@ -70,7 +69,7 @@ class AuthController extends GetxController {
     if (response.statusCode == 200) {
       await getCurrentUser(newUser.email!);
       // Get.offAll(()=>HomeScreenUser());
-      Get.offAll(()=>DashboardOverViewScreen());
+      Get.offAll(() => DashboardOverViewScreen());
     } else {
       print(response.reasonPhrase);
     }
