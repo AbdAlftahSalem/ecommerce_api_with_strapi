@@ -70,7 +70,7 @@ class DashboardOverViewScreen extends StatelessWidget {
                           ),
                           onTap: () => Get.to(() => UserWindowsScreen()),
                         ),
-                        cardOverView('Users sign up last 24 hours ', "30"),
+                        cardOverView('Users sign up last 24 hours ', "2"),
                         InkWell(
                           onTap: () => Get.to(() => ProductsWindowsScreen()),
                           child: cardOverView('Products',
@@ -86,7 +86,7 @@ class DashboardOverViewScreen extends StatelessWidget {
                           child: cardOverView('All order',
                               homeAdminController.allChekOut.length),
                         ),
-                        cardOverView('Order last 24 hours', "30"),
+                        cardOverView('Order last 24 hours', "1"),
                       ],
                     ),
                   ),

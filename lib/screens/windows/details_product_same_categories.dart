@@ -2,6 +2,7 @@ import 'package:ecommerce_api/controllers/product_controller.dart';
 import 'package:ecommerce_api/models/category_model.dart';
 import 'package:ecommerce_api/screens/widget/custem_text.dart';
 import 'package:ecommerce_api/screens/widget/custom_text_form_field.dart';
+import 'package:ecommerce_api/screens/widget/product_Table.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -62,38 +63,12 @@ class DetailsProductSameCategories extends StatelessWidget {
                         color: Color(0xFFFAF7FF),
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 2.0.w),
-                          child: ListView.separated(
-                            itemBuilder: (context, index) {
-                              return InkWell(
-                                onTap: () =>
-                                    Get.to(() => DetailsProductWindowScreen(
-                                          product: productController
-                                              .productWithSameCategory[index],
-                                          index: index,
-                                        )),
-                                child: cardProduct(
-                                  imageProduct: productController
-                                      .productWithSameCategory[index].image,
-                                  categoryProduct: productController
-                                      .productWithSameCategory[index]
-                                      .category!
-                                      .title,
-                                  colorProduct: productController
-                                      .productWithSameCategory[index].color,
-                                  idProduct: productController
-                                      .productWithSameCategory[index].id
-                                      .toString(),
-                                  priceProduct: productController
-                                      .productWithSameCategory[index].price,
-                                  titleProduct: productController
-                                      .productWithSameCategory[index].title,
-                                ),
-                              );
-                            },
-                            separatorBuilder: (context, index) =>
-                                spaceBetween(high: 1.0.h),
-                            itemCount: productController
-                                .productWithSameCategory.length,
+                          child: ListView(
+                            children: [
+                              ProductTable(
+                                  product: productController
+                                      .productWithSameCategory),
+                            ],
                           ),
                         ),
                       ),

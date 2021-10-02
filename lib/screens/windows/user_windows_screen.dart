@@ -47,18 +47,11 @@ class UserWindowsScreen extends StatelessWidget {
             Expanded(
               flex: 9,
               child: Container(
-                child: ListView.builder(
-                  itemCount: authController.allUser.length,
+                child: ListView(
                   physics: BouncingScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    return orderCard(
-                      imageUser: authController.allUser[index].profilePic,
-                      userName: authController.allUser[index].username,
-                      emailUser: authController.allUser[index].email,
-                      idUser: authController.allUser[index].id,
-                      phoneUser: authController.allUser[index].phone,
-                    );
-                  },
+                  children: [
+                    allUsersTable(),
+                  ],
                 ),
               ),
             ),
@@ -68,51 +61,74 @@ class UserWindowsScreen extends StatelessWidget {
     );
   }
 
-  Widget orderCard(
-      {String? imageUser,
-      emailUser,
-      userName,
-      idUser,
-      phoneUser,
-      profileCompleted}) {
-    return Container(
-      margin: EdgeInsets.all(1.0.w),
-      decoration: BoxDecoration(
-        color: Color(0xFFE3E0F3),
-        borderRadius: BorderRadius.circular(2.0.w),
-      ),
-      child: Padding(
-        padding: EdgeInsets.only(left: 2.0.w, right: 2.0.w, top: 0.5.h),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(5.0.w),
-              child: Image.network(
-                "$URL${imageUser!}",
-                width: 5.0.w,
-                height: 3.0.h,
-              ),
-            ),
-            CustomText(
-              txt: idUser.toString(),
-              alignment: Alignment.center,
-            ),
-            CustomText(
-              txt: userName.toString(),
-            ),
-            CustomText(
-              txt: emailUser.toString(),
-              color: Colors.green,
-              alignment: Alignment.center,
-            ),
-            CustomText(
-              txt: phoneUser.toString(),
-            ),
-          ],
+  DataTable allUsersTable() {
+    return DataTable(
+      columns: [
+        DataColumn(
+          label: CustomText(
+            txt: "ID user",
+            fontWeight: FontWeight.w900,
+          ),
         ),
-      ),
+        DataColumn(
+          label: CustomText(
+            txt: "User name",
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+        DataColumn(
+          label: CustomText(
+            txt: "Email user",
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+        DataColumn(
+          label: CustomText(
+            txt: "Phone user",
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+        DataColumn(
+          label: CustomText(
+            txt: "Profile completed",
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+      ],
+      rows: authController.allUser.map((e) {
+        return DataRow(cells: [
+          DataCell(
+            CustomText(
+              txt: '#${e.id}',
+              alignment: Alignment.centerLeft,
+            ),
+          ),
+          DataCell(
+            CustomText(
+              txt: e.username,
+              alignment: Alignment.centerLeft,
+            ),
+          ),
+          DataCell(
+            CustomText(
+              txt: e.email!,
+              alignment: Alignment.centerLeft,
+            ),
+          ),
+          DataCell(
+            CustomText(
+              txt: e.phone,
+              alignment: Alignment.centerLeft,
+            ),
+          ),
+          DataCell(
+            CustomText(
+              txt: e.confirmed.toString(),
+              alignment: Alignment.centerLeft,
+            ),
+          ),
+        ]);
+      }).toList(),
     );
   }
 }

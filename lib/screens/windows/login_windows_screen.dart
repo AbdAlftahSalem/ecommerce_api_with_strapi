@@ -28,7 +28,8 @@ class LoginWindowsScreen extends StatelessWidget {
                       color: Colors.white,
                       child: Image.asset(
                         'assets/image/Secure login-bro.png',
-                        fit: BoxFit.cover,
+                        width: double.infinity,
+                        height: double.infinity,
                       ),
                     ),
                   ),

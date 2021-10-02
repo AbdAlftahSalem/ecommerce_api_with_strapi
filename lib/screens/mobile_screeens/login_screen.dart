@@ -5,6 +5,7 @@ import 'package:ecommerce_api/screens/widget/custom_text_form_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -18,24 +19,26 @@ class LoginScreen extends StatelessWidget {
       builder: (controller) {
         return Scaffold(
           resizeToAvoidBottomInset: false,
-          appBar: AppBar(
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-            elevation: 0,
-            title: Text("Login"),
-            centerTitle: false,
-          ),
           body: Form(
             key: _formKeyLogin,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 5.0.w),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset(
-                    'assets/image/online-shop.png',
-                    width: 50.0.w,
-                    height: 20.0.h,
+                  spaceBetween(high: 10.0.h),
+                  Text(
+                    'Woo commerce',
+                    style: GoogleFonts.coveredByYourGrace(
+                      textStyle: TextStyle(color: primaryColor, fontSize: 22.0.sp),
+                    ),
                   ),
-                  spaceBetween(high: 5.0.h),
+                  spaceBetween(high: 1.0.h),
+                  CustomText(
+                    txt: "Sign in to access commerce",
+                    color: Colors.grey,
+                  ),
+                  spaceBetween(high: 13.0.h),
                   CustomText(
                     txt: "Phone Number",
                     color: Theme.of(context).textTheme.bodyText1!.color,
@@ -64,35 +67,43 @@ class LoginScreen extends StatelessWidget {
                     ],
                   ),
                   spaceBetween(high: 1.0.h),
-                  ElevatedButton(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CustomText(
-                          txt: "Sign in",
-                          alignment: Alignment.center,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                        ),
-                        authController.loading ? Spacer() : CustomText(),
-                        authController.loading
-                            ? CupertinoActivityIndicator()
-                            : CustomText(),
-                      ],
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      primary: primaryColor,
-                      fixedSize: Size(80.0.w, 6.0.h),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(2.0.w),
+                  Center(
+                    child: ElevatedButton(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CustomText(
+                            txt: "Sign in",
+                            alignment: Alignment.center,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          authController.loading ? Spacer() : CustomText(),
+                          authController.loading
+                              ? CupertinoActivityIndicator()
+                              : CustomText(),
+                        ],
                       ),
+                      style: ElevatedButton.styleFrom(
+                        primary: primaryColor,
+                        fixedSize: Size(80.0.w, 6.0.h),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(2.0.w),
+                        ),
+                      ),
+                      onPressed: () async {
+                        _formKeyLogin.currentState!.save();
+                        if (_formKeyLogin.currentState!.validate()) {
+                          await authController.signInUser();
+                        }
+                      },
                     ),
-                    onPressed: () async {
-                      _formKeyLogin.currentState!.save();
-                      if (_formKeyLogin.currentState!.validate()) {
-                        await authController.signInUser();
-                      }
-                    },
+                  ),
+                  spaceBetween(high: 15.0.h),
+                  CustomText(
+                    txt: "Don’t have account ? sign up",
+                    alignment: Alignment.center,
+                    color: Theme.of(context).textTheme.bodyText1!.color,
                   ),
                 ],
               ),
@@ -106,8 +117,8 @@ class LoginScreen extends StatelessWidget {
   Widget emailFormField() {
     return CustomTextFormField(
       color: Colors.black,
-      hintTxt: "E_mail",
-      keyboardType: TextInputType.number,
+      hintTxt: "Email",
+      keyboardType: TextInputType.emailAddress,
       onSaved: (val) {
         authController.newUser.email = val;
       },

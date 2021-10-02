@@ -1,9 +1,12 @@
 import 'package:ecommerce_api/controllers/auth_controller.dart';
 import 'package:ecommerce_api/controllers/home_admin_controller.dart';
+import 'package:ecommerce_api/screens/widget/cached_network_image.dart';
 import 'package:ecommerce_api/screens/widget/custem_text.dart';
+import 'package:ecommerce_api/screens/widget/custom_outline_button.dart';
 import 'package:ecommerce_api/screens/widget/custom_text_form_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
@@ -22,85 +25,139 @@ class OrderScreen extends StatelessWidget {
       appBar: AppBar(),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 2.0.w, vertical: 1.0.h),
-        child: Column(
-          children: [
-            Expanded(
-              child: Container(
-                color: Color(0xFFFAF7FF),
-                margin: EdgeInsets.all(2.0.w),
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: SizedBox(
-                        width: 50.0.w,
-                        child: CustomTextFormField(
-                          color: Colors.black,
-                          hintTxt: "search",
-                          icon: Icons.search,
-                          keyboardType: TextInputType.emailAddress,
-                          onSaved: (val) {
-                            // authController.newUser.email = val;
-                          },
-                          onChange: (val) {
-                            // authController.newUser.email = val;
-                          },
-                          validator: (value) {
-                            if (value.isEmpty) {
-                              return "Required";
-                            } else
-                              return null;
-                          },
-                          controller:
-                              TextEditingController(text: "Search product"),
-                        ),
-                      ),
-                    ),
-
-                    Expanded(
-                      flex: 7,
-                      child: Container(
-                        color: Color(0xFFFAF7FF),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 2.0.w),
-                          child: ListView.separated(
-                            itemCount: homeAdminController.allChekOut.length,
-                            itemBuilder: (context, index) {
-                              dynamic dateOrder = DateFormat.yMd().format(
-                                  DateTime.parse(homeAdminController
-                                      .allChekOut[index].dateOfOrder!));
-                              return InkWell(
-                                onTap: () => Get.to(
-                                  () => DetailsOrderScreen(
-                                      checkout: homeAdminController
-                                          .allChekOut[index]),
-                                ),
-                                child: cardProduct(
-                                  imageCustomer: homeAdminController
-                                      .allChekOut[index].customerPic,
-                                  userNameCustomer: homeAdminController
-                                      .allChekOut[index].customerName,
-                                  dateOrder: dateOrder,
-                                  priceOrder: homeAdminController
-                                      .allChekOut[index].price,
-                                  idOrder: "1",
-                                  quntity: "2",
-                                ),
-                              );
-                            },
-                            separatorBuilder:
-                                (BuildContext context, int index) =>
-                                    spaceBetween(high: 1.0.h),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+        child: Container(
+          color: Color(0xFFFAF7FF),
+          margin: EdgeInsets.all(2.0.w),
+          child: Column(
+            children: [
+              Expanded(
+                flex: 1,
+                child: SizedBox(
+                  width: 50.0.w,
+                  child: CustomTextFormField(
+                    color: Colors.black,
+                    hintTxt: "search",
+                    icon: Icons.search,
+                    keyboardType: TextInputType.emailAddress,
+                    onSaved: (val) {
+                      // authController.newUser.email = val;
+                    },
+                    onChange: (val) {
+                      // authController.newUser.email = val;
+                    },
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return "Required";
+                      } else
+                        return null;
+                    },
+                    controller: TextEditingController(text: "Search product"),
+                  ),
                 ),
               ),
-            ),
-          ],
+              Expanded(
+                flex: 8,
+                child: Container(
+                  child: ListView(
+                    physics: BouncingScrollPhysics(),
+                    children: [
+                      allUsersTable(),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
+    );
+  }
+
+
+  DataTable allUsersTable() {
+    return DataTable(
+      columns: [
+        DataColumn(
+          label: CustomText(
+            txt: "ID Order",
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+        DataColumn(
+          label: CustomText(
+            txt: "Customer name",
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+        DataColumn(
+          label: CustomText(
+            txt: "Customer email",
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+        DataColumn(
+          label: CustomText(
+            txt: "Customer phone",
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+        DataColumn(
+          label: CustomText(
+            txt: "Quantity",
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+        DataColumn(
+          label: CustomText(
+            txt: "Price",
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+      ],
+      rows: homeAdminController.allChekOut.map((e) {
+        return DataRow(
+            onSelectChanged: (val){
+              Get.to(DetailsOrderScreen(checkout: e,));
+            },
+            cells: [
+          DataCell(
+            CustomText(
+              txt: '#${e.id}',
+              alignment: Alignment.centerLeft,
+            ),
+          ),
+          DataCell(
+            CustomText(
+              txt: e.customerName,
+              alignment: Alignment.centerLeft,
+            ),
+          ),
+          DataCell(
+            CustomText(
+              txt: e.customerEmail!,
+              alignment: Alignment.centerLeft,
+            ),
+          ),
+          DataCell(
+            CustomText(
+              txt: e.customerPhone,
+              alignment: Alignment.centerLeft,
+            ),
+          ),
+          DataCell(
+            CustomText(
+              txt: e.orders![0].countityProduct,
+              alignment: Alignment.centerLeft,
+            ),
+          ),
+          DataCell(
+            CustomText(
+              txt: "${e.price} \$",
+              alignment: Alignment.centerLeft,
+            ),
+          ),
+        ]);
+      }).toList(),
     );
   }
 

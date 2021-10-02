@@ -20,7 +20,7 @@ class HomeUserController extends GetxController {
   int currentIndex = 0;
   AuthController authController = Get.find();
   HomeAdminController homeAdminController = Get.find();
-  CartController cartController = Get.find();
+  CartController cartController = Get.put(CartController());
   List<ProductsModel> productWithCat = [];
   String productCategory = "All product";
   int quntity = 1;
@@ -123,8 +123,8 @@ class HomeUserController extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
     chooseCat(productCategory);
+    Get.put(CartController());
   }
 }
