@@ -16,6 +16,16 @@ This app was made with Flutter and strapi API, I made a windows app for admin, a
 
 
 
+![App-1_page-0010_iphone12propacificblue_portrait](https://user-images.githubusercontent.com/67217506/161254613-f70aea39-a058-4416-98f3-d04e5761bb4a.png)
+![App-1_page-0011_iphone12propacificblue_portrait](https://user-images.githubusercontent.com/67217506/161254628-ada31199-502b-489b-9ae5-4dbb06f6d5bb.png)
+![App-1_page-0001_iphone12propacificblue_portrait](https://user-images.githubusercontent.com/67217506/161254644-635f2ba7-a400-4be5-abf4-6cb40decb43d.png)
+![App-1_page-0002_iphone12propacificblue_portrait](https://user-images.githubusercontent.com/67217506/161254662-dcf9671d-6f96-429f-bbd4-cffcd9558e6e.png)
+![App-1_page-0003_iphone12propacificblue_portrait](https://user-images.githubusercontent.com/67217506/161254679-1cccef22-72b2-4469-9498-25c1548d7d9f.png)
+![App-1_page-0004_iphone12propacificblue_portrait](https://user-images.githubusercontent.com/67217506/161254717-0a9cfe36-574f-40d8-9a10-43c40845d06f.png)
+![App-1_page-0005_iphone12propacificblue_portrait](https://user-images.githubusercontent.com/67217506/161254751-0343b6a1-6417-4d9a-a960-d91bad53c45f.png)
+![App-1_page-0009_iphone12propacificblue_portrait](https://user-images.githubusercontent.com/67217506/161254813-9b5919ce-5724-4550-820a-c5d558c9dea4.png)
+
+
 
 
 ![Screenshot 2021-09-22 135251](https://user-images.githubusercontent.com/67217506/134819247-00cd73cb-d002-4140-ba01-6af8845b1ae0.jpg)
@@ -28,3 +38,4 @@ This app was made with Flutter and strapi API, I made a windows app for admin, a
 ![Screenshot 2021-09-22 135357](https://user-images.githubusercontent.com/67217506/134819258-cc0f436e-f621-452c-b158-8eae795126c7.jpg)
 ![Screenshot 2021-09-22 135409](https://user-images.githubusercontent.com/67217506/134819259-6f7e5194-7a19-49c4-b8e1-f40e7aeb3003.jpg)
 ![Screenshot 2021-09-22 135639](https://user-images.githubusercontent.com/67217506/134819261-6ccc2d93-e19a-4c99-a0d7-2f5a6d818ccb.jpg)
+
